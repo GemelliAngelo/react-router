@@ -21,31 +21,23 @@ export default function PostsPage() {
       <table className="table">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">
+              <i className="fa-brands fa-github"></i>
+            </th>
+            <th scope="col">Anteprima</th>
+            <th scope="col">Categorie</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry the Bird</td>
-            <td>Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
+          {posts.map((post) => (
+            <tr key={post.id}>
+              <th scope="row">{post.title}</th>
+              <td>{post.image}</td>
+              {post.categories.map((category) => (
+                <td key={category}>{category}</td>
+              ))}
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
