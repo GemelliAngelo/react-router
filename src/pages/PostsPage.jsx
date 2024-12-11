@@ -18,7 +18,7 @@ export default function PostsPage() {
   return (
     <div className="container">
       <h1 className="my-4">Posts</h1>
-      <table className="table">
+      <table className="table table-dark table-striped">
         <thead>
           <tr>
             <th scope="col">
@@ -36,7 +36,7 @@ export default function PostsPage() {
                 {post.title}
               </th>
               <td>
-                <img src={apiUrl + post.image} width="100" />
+                <img src={apiUrl + post.image} width="140" />
               </td>
               <td className="align-middle">
                 {post.categories.map((category) => (
@@ -48,7 +48,7 @@ export default function PostsPage() {
               <td className="align-middle">
                 <i
                   type="button"
-                  class="fa-solid fa-up-right-and-down-left-from-center"
+                  className="fa-solid fa-up-right-and-down-left-from-center"
                 ></i>
               </td>
             </tr>
