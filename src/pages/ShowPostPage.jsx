@@ -35,7 +35,7 @@ export default function ShowPostPage() {
   return (
     <div className="container">
       {post && (
-        <div className="card my-3">
+        <div className="card my-4">
           <div className="row g-0">
             <div className="col-md-4">
               <img
@@ -47,7 +47,10 @@ export default function ShowPostPage() {
               <div className="card-body">
                 <h2 className="card-title">{post.title}</h2>
                 <p className="card-text">{post.content}</p>
-                <p className="card-text">
+                <p className="card-text fs-4">
+                  {post.published ? "Disponibile" : "Non Disponibile"}
+                </p>
+                <p className="card-text align-bottom">
                   {post.categories.map((category) => (
                     <span
                       key={category}
