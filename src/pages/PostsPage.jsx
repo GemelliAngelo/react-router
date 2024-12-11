@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function PostsPage() {
   const apiUrl = import.meta.env.VITE_API_URL;
@@ -46,10 +47,12 @@ export default function PostsPage() {
                 ))}
               </td>
               <td className="align-middle">
-                <i
-                  type="button"
-                  className="fa-solid fa-up-right-and-down-left-from-center"
-                ></i>
+                <Link to={`/posts/${post.id}`}>
+                  <i
+                    type="button"
+                    className="fa-solid fa-up-right-and-down-left-from-center"
+                  ></i>
+                </Link>
               </td>
             </tr>
           ))}

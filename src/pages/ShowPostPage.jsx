@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 export default function ShowPostPage() {
   const navigate = useNavigate();
   const postId = useParams().id;
-  const apiUrl = import.meta.VITE_API_URL;
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const [post, setPost] = useState();
 
@@ -15,15 +15,50 @@ export default function ShowPostPage() {
   const fetchShowPost = (id) => {
     const url = `${apiUrl}/posts/${id}`;
     fetch(url)
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("OPS! Qualcosa è andato storto");
+        }
+        return res.json();
+      })
       .then((data) => {
-        console.log(data);
+        setPost(data);
+      })
+      .catch((err) => {
+        console.error(err);
       });
   };
 
   return (
     <div className="container">
-      <h1 className="my-4">SHOW</h1>
+      {post && (
+        <div className="card my-3">
+          <div className="row g-0">
+            <div className="col-md-4">
+              <img
+                src={apiUrl + post.image}
+                className="img-fluid rounded-start"
+              />
+            </div>
+            <div className="col-md-8">
+              <div className="card-body">
+                <h2 className="card-title">{post.title}</h2>
+                <p className="card-text">{post.content}</p>
+                <p className="card-text">
+                  {post.categories.map((category) => (
+                    <span
+                      key={category}
+                      className="fs-5 badge text-bg-info ms-2"
+                    >
+                      {category}
+                    </span>
+                  ))}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
