@@ -11,7 +11,7 @@ function App() {
         <Route Component={DefaultLayout}>
           <Route index Component={HomePage} />
           <Route path="/about" Component={AboutPage} />
-          <Route path="/Posts" Component={PostsPage} />
+          <Route path="/posts" Component={PostsPage} />
         </Route>
       </Routes>
     </BrowserRouter>
