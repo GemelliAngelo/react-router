@@ -26,16 +26,31 @@ export default function PostsPage() {
             </th>
             <th scope="col">Anteprima</th>
             <th scope="col">Categorie</th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
           {posts.map((post) => (
             <tr key={post.id}>
-              <th scope="row">{post.title}</th>
-              <td>{post.image}</td>
-              {post.categories.map((category) => (
-                <td key={category}>{category}</td>
-              ))}
+              <th className="align-middle" scope="row">
+                {post.title}
+              </th>
+              <td>
+                <img src={apiUrl + post.image} width="100" />
+              </td>
+              <td className="align-middle">
+                {post.categories.map((category) => (
+                  <span key={category} className="badge text-bg-info ms-2">
+                    {category}
+                  </span>
+                ))}
+              </td>
+              <td className="align-middle">
+                <i
+                  type="button"
+                  class="fa-solid fa-up-right-and-down-left-from-center"
+                ></i>
+              </td>
             </tr>
           ))}
         </tbody>
