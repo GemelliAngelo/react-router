@@ -27,6 +27,7 @@ export default function PostsPage() {
             </th>
             <th scope="col">Anteprima</th>
             <th scope="col">Categorie</th>
+            <th scope="col">Disponibile</th>
             <th scope="col"></th>
           </tr>
         </thead>
@@ -45,6 +46,13 @@ export default function PostsPage() {
                     {category}
                   </span>
                 ))}
+              </td>
+              <td className="align-middle">
+                {post.published ? (
+                  <i className="fa-solid fa-check"></i>
+                ) : (
+                  <i className="fa-solid fa-xmark"></i>
+                )}
               </td>
               <td className="align-middle">
                 <Link to={`/posts/${post.id}`}>

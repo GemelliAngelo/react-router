@@ -17,6 +17,9 @@ export default function ShowPostPage() {
     fetch(url)
       .then((res) => {
         if (!res.ok) {
+          if (res.status == 404) {
+            navigate("not-found");
+          }
           throw new Error("OPS! Qualcosa è andato storto");
         }
         return res.json();
