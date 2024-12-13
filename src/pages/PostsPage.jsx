@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import PostsList from "../components/PostsList";
 
 export default function PostsPage() {
