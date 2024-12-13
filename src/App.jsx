@@ -1,10 +1,21 @@
+// # IMPORT ROUTES FUNCTION
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// # IMPORT ROUTES PAGES
+
+// *Layout
+import DefaultLayout from "./layouts/DefaultLayout";
+
+// * Navbar Routes
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import PostsPage from "./pages/PostsPage";
+
+// * Redirect Routes
 import ShowPostPage from "./pages/ShowPostPage";
-import DefaultLayout from "./layouts/DefaultLayout";
 import NotFound from "./pages/NotFound";
+
+// # IMPORT CONTEXT
 import { PostsContextProvider } from "./contexts/PostsContext";
 
 function App() {
