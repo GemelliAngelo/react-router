@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import PostCard from "../components/PostCard";
 
 export default function ShowPostPage() {
   const navigate = useNavigate();
@@ -34,47 +35,8 @@ export default function ShowPostPage() {
 
   return (
     <div className="container">
-      {post && (
-        <>
-          <div className="card my-4">
-            <div className="row g-0">
-              <div className="col-md-4">
-                <img
-                  src={apiUrl + post.image}
-                  className="img-fluid rounded-start"
-                />
-              </div>
-              <div className="col-md-8">
-                <div className="card-body">
-                  <h2 className="card-title">{post.title}</h2>
-                  <p className="card-text">{post.content}</p>
-                  <p className="card-text fs-4">
-                    {post.published ? "Disponibile" : "Non Disponibile"}
-                  </p>
-                  <p className="card-text align-bottom">
-                    {post.categories.map((category) => (
-                      <span
-                        key={category}
-                        className="fs-5 badge text-bg-info ms-2"
-                      >
-                        {category}
-                      </span>
-                    ))}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button
-            type="button"
-            className="btn btn-secondary"
-            onClick={() => navigate(-1)}
-          >
-            <i className="fa-solid fa-chevron-left me-2"></i>
-            Indietro
-          </button>
-        </>
-      )}
+      <h1 className="my-4">DETTAGLIO POST</h1>
+      <PostCard />
     </div>
   );
 }
