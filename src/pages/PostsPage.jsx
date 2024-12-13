@@ -4,17 +4,17 @@ import { Link } from "react-router-dom";
 export default function PostsPage() {
   const apiUrl = import.meta.env.VITE_API_URL;
 
-  const [posts, setPosts] = useState([]);
+  // const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
-    fetchPosts();
-  }, []);
+  // useEffect(() => {
+  //   fetchPosts();
+  // }, []);
 
-  const fetchPosts = () => {
-    fetch(apiUrl + "/posts")
-      .then((res) => res.json())
-      .then((data) => setPosts(data));
-  };
+  // const fetchPosts = () => {
+  //   fetch(apiUrl + "/posts")
+  //     .then((res) => res.json())
+  //     .then((data) => setPosts(data));
+  // };
 
   return (
     <>
