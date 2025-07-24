@@ -1,11 +1,11 @@
-import { usePostscontext } from "../contexts/PostsContext";
+import { usePostsContext } from "../contexts/PostsContext";
 import { Link } from "react-router-dom";
 
 export default function PostsList() {
   const apiUrl = import.meta.env.VITE_API_URL;
 
   // const [posts, setPosts] = useState([]);
-  const { posts } = usePostscontext();
+  const { posts } = usePostsContext();
 
   // useEffect(() => {
   //   fetchPosts();

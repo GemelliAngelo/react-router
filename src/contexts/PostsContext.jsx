@@ -53,4 +53,4 @@ export const PostsContextProvider = ({ children }) => {
   );
 };
 
-export const usePostscontext = () => useContext(Postscontext);
+export const usePostsContext = () => useContext(Postscontext);
